@@ -1,0 +1,493 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+    margin: 0%;
+    transition: 5s opacity;
+    letter-spacing: .1vw;
+   font-family: 'Open Sans',
+   sans-serif;
+   font-size: 1.3vw;
+
+}
+
+body.fade-out {
+    opacity: .1;
+    transition: none;
+}
+video{
+   filter: grayscale(35%);
+    opacity: 0.9;
+}
+.Navbar {
+    overflow: hidden;
+    background-color: rgba(0, 0, 14, 0.692);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    -webkit-animation: moveNav 5s;
+    animation: moveNav 5s;
+    text-align:center;
+  
+   
+}
+
+.Navbar a {
+    float: left;
+    display: block;
+    color: rgb(0,242, 250);
+    padding: .75vw 100px;
+    text-decoration: none;
+ font-family: 'Righteous',
+ cursive;
+ font-size: 2vw;
+    text-align: center;
+    position: relative;
+    -webkit-animation: movenavText 5.75s;
+    animation: movenavText 5.75s;
+}
+
+@keyframes moveNav {
+    from {
+        left: -100vw;
+    }
+
+    to {
+        left: 0vw;
+    }
+}
+
+@keyframes movenavText {
+    from {
+        top: -100vw;
+    }
+
+    to {
+        top: 0vw;
+    }
+}
+
+
+@keyframes movevideoText {
+    from {
+        top: -100vw;
+    }
+
+    to {
+        top: 0px;
+    }
+}
+
+.Navbar a:hover {
+    background-color: rgba(205, 206, 206, 0.138);
+    cursor: pointer;
+    -webkit-transition-duration: 3s;
+    transition-duration: 1s;
+    color:rgba(2, 12, 39, 0.911);
+}
+
+.Navbar a.active {
+    background-color: transparent;
+}
+
+@keyframes zoominoutsinglefeatured {
+    0% {
+        transform: scale(1.5, 1.5);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+/* Video */
+#Header_Video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-height: 100%;
+    min-width:100%;
+    top: 0;
+    z-index: -1;
+    animation: zoominoutsinglefeatured 5s;
+    margin: 0 auto;
+}
+
+.Video_Text {
+  background-color: rgba(0, 4, 15, 0.678);
+
+  color: white;
+    width: 100%;
+    padding-top: .1vh;
+    padding-bottom: 1vh;
+    margin-top: 23%;
+    position: relative;
+    -webkit-animation: moveNav 4s;
+    animation: movevideoText 4s;
+    text-align: justify;
+}
+
+#Slideshow_Background {
+    background-color: rgba(0, 0, 0, 0.219);
+  }
+
+  .myslides {
+    display: none;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+#Slideshow_Container {
+    width: 39.5vw;
+    height: auto;
+    padding-top: 4%;
+    position: relative;
+    margin: auto;
+
+}
+
+.Slide_Show_Images {
+    vertical-align: middle;
+    height: auto;
+    box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75);
+    width: auto;
+    border-radius: 10px;
+}
+img,.Slide_Show_Images {
+    padding-bottom:5%;
+}
+
+.Previous,
+.Next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    margin-top: -0vw;
+    color: rgb(0, 242, 250);
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+    background-color: rgba(0, 15, 58, 0.616);
+    
+}
+
+.Next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    color:rgb(0, 242, 250, 0.911);
+}
+
+.Previous:hover,
+.Next:hover {
+    color:rgb(250, 212, 0);
+}
+
+.text {
+    color: rgb(0, 242, 250);
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    background-color: rgba(0, 15, 58, 0.616);
+    font-weight: bold;
+    border-radius: 7px 7px 7px 7px;
+}
+div .text{
+    padding:0%;
+    height:auto;
+    max-width:100%;
+    margin: 0 auto;
+    background-color: rgba(0, 4, 15, 0.678);
+    color:rgba(0,242,250);
+
+}
+
+.Slide_Number {
+    color: rgb(0, 242, 250);
+    background-color: rgba(0, 15, 58, 0.616);
+    position: absolute;
+    top: 0;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    display: none;
+}
+
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: rgba(2, 12, 39, 0.911);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.active,
+.dot:hover {
+    background-color: rgba(0, 242, 250);
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+* {box-sizing: border-box;}
+
+   .Column_1{
+    float: left;
+    width: 50%;
+    background-color:rgba(0,0,0,.85);
+    height: 498px;
+    text-align:center;
+    padding-left:2%;
+    padding-right:2%;
+    
+   }
+
+   #GitHub .Column_1 {
+       padding-top: 10%;
+    }
+
+   .Column_2{
+    float:left;
+   width: 50%;
+    padding: 1.6%;
+    height: 498px;
+    background-color:rgba(0,0,0,.5);
+   }
+
+   .div, .Column_2 ,img {
+       padding-top:3%;
+       }
+
+    .Row:after{
+    content:"";
+    display: table;
+    clear: both;
+  }
+
+h1, h3 {
+    text-transform: uppercase;
+ font-family: 'Righteous',
+ cursive;
+ text-align: center;
+    margin-top: 3%;
+    color:rgb(0, 242, 250);
+}
+
+p {
+    text-align: justify;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    color:rgb(0, 242, 250);
+    }
+
+
+center {
+    text-align: center;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    color:rgb(0, 242, 250);
+    
+
+}
+
+
+q:hover{
+    color: rgba(250, 212, 0);
+    text-align:center;
+}
+img {
+    filter: grayscale(55%);
+   border-radius: 8px;
+   width:auto;
+   max-height:100%;
+    margin: 0 auto auto auto;
+    padding-bottom:-10%;
+    display: block;
+
+   
+}
+#pic-container{
+    transform:scale(1 , .8);
+    animation:github;
+}
+
+center:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+    color:rgba(250, 212, 0);
+}
+
+p:hover {
+    color: rgba(250, 212, 0);
+    transition: transform 1s;
+    transform: scale(1.01);
+    
+}
+
+h1, h3:hover {
+    
+    font-weight: normal;
+    color:rgba(250, 212, 0);
+}
+
+  img:hover {
+    filter: grayscale(5%);
+   transform: scale(1.2);
+   margin-top:7%;
+}
+
+
+@keyframes movePopup {
+    from {
+        right: -40vw;
+    }
+
+    to {
+        bottom: 1.75vw;
+    }
+}
+
+.Pop_Up_Button {
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 25vw;
+    background-color: rgb(21, 20, 56);
+    color: rgb(0, 242, 250);
+    border: solid;
+    cursor: pointer;
+    position: fixed;
+    -webkit-animation: movePopup 5s;
+    animation: movePopup 5s;
+}
+
+.form-popup {
+    border: 3px solid #f0f1f086;
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: 6px;
+    right: 6px;
+    color:rgba(0, 242, 250);
+}
+
+.form-container {
+    max-width: 49vw;
+    padding: 9px;
+    background-color: rgba(68, 65, 65, 0.685);
+}
+
+.form-container input[type=text],
+.form-container input[type=password] {
+    width: 100%;
+    padding: .93vw;
+    margin: .6vw 0 .6vw 0;
+    border: none;
+    background: Gainsboro;
+    font-family: Helvetica, Avant Garde;
+    font-size: 1vw;
+    color:rgba( 0, 242, 250 );
+}
+
+.form-container .btn {
+    background-color: transparent;
+    color: rgb(0, 242, 250);
+    border-color: rgb(0, 242, 250);
+    margin-bottom: 1vh;
+}
+
+.form-container .cancel {
+    border-color: rgb(0, 242, 250);
+    color:rgb(0, 242, 250);
+    background:transparent;
+    
+}
+
+button {
+    font-family: "Trebuchet MS", Optima;
+    letter-spacing: .3vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 1.5vw 1.5vw;
+    border-style: solid;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+    color:transparent;
+}
+
+button:hover,
+.form-container .btn:hover {
+    color: rgb(250, 212, 0);
+    background-color: rgba(6, 70, 6, 0.863);
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+    border-style: solid;
+    border-color:rgba(5, 22, 71, 0.9);
+}
+
+button ,.Pop_Up_Button:hover{
+    background-color:transparent;
+    border: 5px solid rgba(250,212,0);
+    color:rgb(0, 242, 250);
+}
+.form-container .cancel:hover {
+    color: rgb(250, 212, 0);
+    background-color: rgba(139, 0, 0, 0.664);
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+    border-style: solid;
+    border-color: rgba(5, 22, 71, 0.925);
+}
+
+#footer {
+    padding: 2%;
+    background-color: transparent;
+    color: rgb(0, 242, 250);
+    margin: 0 auto;
+    font-size:10px;
+}
+footer:hover {
+    color: rgb(250, 212, 0);
+}
